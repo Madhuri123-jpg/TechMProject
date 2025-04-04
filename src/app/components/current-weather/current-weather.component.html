@@ -1,0 +1,16 @@
+<div class="weather-container">
+    <app-weather-search (searchEvent)="onSearch($event)"></app-weather-search>
+    <div *NgIf="loading" class="loading"> Loading... </div>
+    <div *NgIf="errorMessage" class="error"> {{ errorMessage }} </div>
+    <div *NgIf="currentWeather && !loading" class="weather-card">
+        <h2>{{ currentWeather?.city }}, {{ currentWeather?.country }}</h2>
+        <div class="weather-info">
+        <div class="temperature"> {{ currentWeather?.temperature }}°C </div>
+        <div class="description"> {{ currentWeather?.description }} </div>
+        <div class="details">
+            <p>Humidity: {{ currentWeather?.humidity }}%</p>
+            <p>Wind: {{ currentWeather?.windSpeed }} m/s</p>
+        </div>
+        </div>
+    </div>
+</div>

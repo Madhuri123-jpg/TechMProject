@@ -1,0 +1,7 @@
+<div class="search-container">
+    <h2>Search Weather</h2>
+    <div class="search-form">
+      <input type="text" [(ngModel)]="cityName" placeholder="Enter city name" (keyup.enter)="searchWeather()">
+      <button (click)="searchWeather()">Search</button>
+    </div>
+  </div>
